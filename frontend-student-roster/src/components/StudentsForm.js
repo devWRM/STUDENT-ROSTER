@@ -16,14 +16,19 @@ class StudentsForm extends Component {
 
 
     handleChange = e => {
-        const { name, value } = e.target
-
+        const { name, keyStroke } = e.target
+    // name => property name (name, nickname, or email)
+    // value => keyStroke   WHY  Use "name" mandatory but "value" not?
+    //                      ANS  Using actual "[name]" but getting the value of "value"
+    
         this.setState({
-            [name]: value
+            [name]: keyStroke
         })
     } 
 
+    // handleSubmit =  => {
 
+    // }
 
 
     render() {
