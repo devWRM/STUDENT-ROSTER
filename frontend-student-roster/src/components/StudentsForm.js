@@ -1,8 +1,10 @@
 // Sets component (local) state
 // 2nd project required container
 
-
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { newStudent } from '../actions/studentsActions';
 
 
 
@@ -16,19 +18,19 @@ class StudentsForm extends Component {
 
 
     handleChange = e => {
-        const { name, keyStroke } = e.target
+        const { name, value } = e.target
     // name => property name (name, nickname, or email)
-    // value => keyStroke   WHY  Use "name" mandatory but "value" not?
-    //                      ANS  Using actual "[name]" but getting the value of "value"
-    
+    // value => each keyStroke + previous state  
+
         this.setState({
-            [name]: keyStroke
+            [name]: value
         })
     } 
 
-    // handleSubmit =  => {
-
-    // }
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.newStudent(this.state)
+    }
 
 
     render() {
@@ -52,4 +54,4 @@ class StudentsForm extends Component {
 }
 
 
-export default StudentsForm;
+export default connect(null, { newStudent })(StudentsForm);
