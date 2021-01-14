@@ -1,3 +1,5 @@
+// Sets global state
+
 import { combineReducers } from 'redux';
 
 import { studentsReducer } from './studentsReducer.js';
