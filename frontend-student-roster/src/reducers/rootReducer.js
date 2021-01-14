@@ -1,4 +1,4 @@
-// Sets global state
+// Sets store (global) state
 
 import { combineReducers } from 'redux';
 
