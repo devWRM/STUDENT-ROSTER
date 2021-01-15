@@ -1,3 +1,6 @@
+// PROJECT REQUIREMENT: 3+ Routes using Router
+// PROJECT REQUIREMENT: Stateless Component
+
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 

@@ -1,3 +1,5 @@
+// PROJECT REQUIREMENT: Stateless Component
+
 import React from 'react';
 
 const About = () => {

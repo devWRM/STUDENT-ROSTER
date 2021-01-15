@@ -1,3 +1,6 @@
+// PROJECT REQUIREMENT: Stateless Component
+
+
 import React from 'react';
 
 // Replaced with Routes from Router
