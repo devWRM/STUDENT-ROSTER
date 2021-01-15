@@ -1,5 +1,5 @@
-// compare studentsActions to action methods in the Controllers
-// got it! studentsActions fetches the actions in the Controllers
+// Actions are objects with type & payload keys
+// got it! studentsActions fetches the action methods in the Controllers
 
 
 export const fetchStudents = () => {
@@ -24,6 +24,27 @@ export const newStudent = student => {
         })
         .then(resp => resp.json())
         .then(dataStudent => dispatch({ type: 'NEW_STUDENT', payload: dataStudent}))
+    }
+}
+
+
+
+export const deleteStudent = studentID => {
+    return (dispatch) => {
+
+
+        return fetch(`http://localhost:3000/students/${studentID}`,{
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(student => {
+            dispatch({ type: "DELETE_STUDENT", payload: student.id })
+        })
+
+
     }
 }
 

@@ -1,6 +1,7 @@
 // PROJECT REQUIREMENT: Container Component
 
 import React, { Component } from 'react';
+// Connects React component to redux store
 import { connect } from 'react-redux';
 
 import { fetchStudents } from '../actions/studentsActions.js';

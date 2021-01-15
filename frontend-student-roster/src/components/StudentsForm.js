@@ -1,5 +1,5 @@
+// PROJECT REQUIREMENT: 2nd container
 // Sets component (local) state
-// 2nd project required container
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';

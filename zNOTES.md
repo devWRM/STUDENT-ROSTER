@@ -11,8 +11,8 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 
 
-
-
+<button onClick={()=>deleteStudent(student.id)}>Delete Student</button>
+<button onClick={deleteStudent(student.id)}>Delete Student</button>
 
 
                <label>Name</label>

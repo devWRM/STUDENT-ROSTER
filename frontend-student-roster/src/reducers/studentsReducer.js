@@ -4,6 +4,9 @@ export const studentsReducer = (state = [], action) => {
             return action.payload
         case 'NEW_STUDENT':
             return [...state, action.payload]
+        case 'DELETE_STUDENT':
+            let newStudents = state.filter(student => student.id !== action.payload)
+            return [...newStudents] 
         default:
             return state
     }
