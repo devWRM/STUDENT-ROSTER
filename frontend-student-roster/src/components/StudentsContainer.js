@@ -1,8 +1,11 @@
+// PROJECT REQUIREMENT: Container Component
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchStudents } from '../actions/studentsActions.js';
 import StudentsForm from './StudentsForm.js';
+import StudentsList from './StudentsList.js';
 
 class StudentsContainer extends Component {
 
@@ -15,6 +18,7 @@ class StudentsContainer extends Component {
             <div>
                 This is the StudentsContainer
                 <StudentsForm />
+                <StudentsList />
             </div>
         );
     }
