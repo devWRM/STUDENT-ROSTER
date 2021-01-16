@@ -7,13 +7,53 @@ RUN APP
 
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
-
-
-
-
 <button onClick={()=>deleteStudent(student.id)}>Delete Student</button>
 <button onClick={deleteStudent(student.id)}>Delete Student</button>
 
+ERROR
+Unhandled Rejection (SyntaxError): Unexpected end of JSON input
+(anonymous function)
+http://localhost:3001/static/js/main.chunk.js:51:26
+  48 |   headers: {
+  49 |     'Content-Type': 'application/json'
+  50 |   }
+> 51 | }).then(resp => resp.json()).then(student => {
+     |                      ^  52 |   dispatch({
+  53 |     type: "DELETE_STUDENT",
+  54 |     payload: student.id
+
+
+
+ERROR
+Unhandled Rejection (SyntaxError): Unexpected end of JSON input
+(anonymous function)
+src/actions/studentsActions.js:36
+  33 | return (dispatch) => {
+  34 | 
+  35 | 
+> 36 |     return fetch(`http://localhost:3000/students/${studentID}`,{
+     | ^  37 |         method: 'DELETE',
+  38 |         headers: {
+  39 |             'Content-Type': 'application/json'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_______________________________________________________
 
                <label>Name</label>
                 <input type="text" value={this.state.name} onChange={this.handleChange} name="name" placeholder="name"></input><br></br><br></br>

@@ -4,29 +4,42 @@ import React from 'react';
 // Connects React component to redux store
 import { connect } from 'react-redux';
 
+// https://stackoverflow.com/questions/61906909/cant-understand-why-onclick-not-working-in-react
+// You can't dispatch directly from a HTML element onClick handler. If you bind the redux action creators it should work as expected
+import { bindActionCreators } from 'redux'
+
 import { deleteStudent } from '../actions/studentsActions.js'
 
 
 // refer to as props.students =>>   const StudentsList = () => {
 
-// deconstructed to refer to as students
-const StudentsList = ({ students }) => {
-    return (
-        
+// destructured to refer to as students
+// const StudentsList = ({ students }) => {
+class StudentsList extends React.Component {
 
-        <div>
+    render() {
+            return (
+                
+                <div>
 
-            <ul>
-                {students.length ? students.map(student => <li key={student.id}>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} <br></br> <button onClick={deleteStudent(student.id)}>Delete Student</button> </li>) : <h3>Roster is empty: No Students</h3>}
-            </ul>
+                    <ul>
+                        {this.props.students.length ? this.props.students.map(student => <li key={student.id}>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} <br></br> <button onClick={() => this.props.deleteStudent(student.id)}>Delete Student</button> </li>) : <h3>Roster is empty: No Students</h3>}
+                    </ul>
 
+                    {/* console.log(`${student.id}`) */}
+                    {/* deleteStudent(student.id) */}
 
-            {/* <ul>
-            {students.map(student => <li key={student.id} on>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} </li>)}
-            </ul> */}
-        </div>
-    );
+                    {/* <ul>
+                    {students.map(student => <li key={student.id} on>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} </li>)}
+                    </ul> */}
+                </div>
+            );
+    }
+
 }
+
+
+
 
 // MAPSTATETOPROPS provides specific store state piece as a prop to this component
 // mapStateToProps isolates piece of the state that concerns this component
@@ -36,4 +49,22 @@ const mapStateToProps = state => {
 }
 // access props =>> this.props.students
 
-export default connect(mapStateToProps)(StudentsList);
+
+
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({deleteStudent}, dispatch)
+//   return bindActionCreators({deleteStudent: deleteStudent}, dispatch)
+}
+
+
+/////  Works without needing to import bindActionCreators   WHY?? /////
+/////  ANS passing deleteStudent(id) action directly into dispatch connects them
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         deleteStudent: id => dispatch(deleteStudent(id))
+//     }
+// }
+
+// alerts this component that we're connected to deleteStudent action through the redux store
+export default connect(mapStateToProps, mapDispatchToProps)(StudentsList);

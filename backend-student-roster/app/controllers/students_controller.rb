@@ -35,7 +35,9 @@ class StudentsController < ApplicationController
 
   # DELETE /students/1
   def destroy
+    # binding.pry
     @student.destroy
+    render json: @student
   end
 
   private
