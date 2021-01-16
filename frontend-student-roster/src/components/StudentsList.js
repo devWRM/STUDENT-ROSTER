@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 // https://stackoverflow.com/questions/61906909/cant-understand-why-onclick-not-working-in-react
 // You can't dispatch directly from a HTML element onClick handler. If you bind the redux action creators it should work as expected
-import { bindActionCreators } from 'redux'
+// import { bindActionCreators } from 'redux'      //  <<= works with mapDispatchToProps(dispatch)
 
 import { deleteStudent } from '../actions/studentsActions.js'
 
@@ -51,20 +51,20 @@ const mapStateToProps = state => {
 
 
 
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({deleteStudent}, dispatch)
-//   return bindActionCreators({deleteStudent: deleteStudent}, dispatch)
-}
+// // Must also uncomment above:     import { bindActionCreators } from 'redux'  
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({deleteStudent}, dispatch)
+// //   return bindActionCreators({deleteStudent: deleteStudent}, dispatch)
+// }
 
 
 /////  Works without needing to import bindActionCreators   WHY?? /////
 /////  ANS passing deleteStudent(id) action directly into dispatch connects them
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         deleteStudent: id => dispatch(deleteStudent(id))
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteStudent: id => dispatch(deleteStudent(id))
+    }
+}
 
 // alerts this component that we're connected to deleteStudent action through the redux store
 export default connect(mapStateToProps, mapDispatchToProps)(StudentsList);
