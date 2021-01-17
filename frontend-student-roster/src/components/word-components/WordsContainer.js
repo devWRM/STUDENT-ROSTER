@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // Connects React component to redux store
 import { connect } from 'react-redux';
 
-import WordsList from './WordsList.js';
+///////////////////import WordsList from './WordsList.js';
 
 // // import { fetchStudents } from '../actions/studentsActions.js';
 // // import StudentsForm from './StudentsForm.js';
@@ -27,6 +27,6 @@ class WordsContainer extends Component {
     }
 }
 
-export default WordsContainer;
+///////////////////////////export default WordsContainer;
 // export default connect(null, { fetchWords })(WordsContainer);
 // // makes fetchWords available to WordsContainer as a prop
