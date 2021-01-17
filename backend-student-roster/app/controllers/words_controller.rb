@@ -14,12 +14,13 @@ class WordsController < ApplicationController
 
   # GET /words/1
   def show
+    @word = Word.find(params[:id])
     render json: @word
   end
 
   # POST /words
   def create
-    @word = Word.new(word_params)
+    @word = @student.words.new(word_params)
 
     if @word.save
       render json: @word, status: :created, location: @word
@@ -53,10 +54,10 @@ class WordsController < ApplicationController
       @student = Student.find(params[:student_id])
     end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_word
-      @word = Word.find(params[:id])
-    end
+    # # Use callbacks to share common setup or constraints between actions.
+    # def set_word
+    #   @word = Word.find(params[:id])
+    # end
 
     # Only allow a trusted parameter "white list" through.
     def word_params
