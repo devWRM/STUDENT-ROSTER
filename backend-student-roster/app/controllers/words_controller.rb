@@ -1,20 +1,14 @@
 class WordsController < ApplicationController
-  before_action :set_word, only: [:show, :update, :destroy]
+  # before_action :set_word, only: [:show, :update, :destroy]
+  before_action :set_student
 
   # GET /words
   def index
     # @words = Word.all
     # render json: @words
 
-
-    if params[:student_id] && @student = Student.find_by_id(params[:student_id])
-        @words = @student.words
-        render json: @words
-    else
-        # @error = "That user doesn't exist" if params[:student_id]
-        @words = Word.all
-        render json: @words
-    end
+    @words = @student.words
+    render json: @words
 
   end
 
@@ -54,6 +48,11 @@ class WordsController < ApplicationController
   end
 
   private
+    # Note  http://localhost:3000/students/1/words
+    def set_student
+      @student = Student.find(params[:student_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_word
       @word = Word.find(params[:id])
