@@ -10,5 +10,5 @@
 Student.destroy_all
 Word.destroy_all
 
-Student.create(name: "Abraham A.", nickname: "abe", email: "abe@email.com")
-
+abe = Student.create(name: "Abraham A.", nickname: "abe", email: "abe@email.com")
+america = Word.create(spelling: "America", pos: "noun", definition: "a North American country, the United States of America", sentence: "I am a citizen of America now.", student_id: 1)
