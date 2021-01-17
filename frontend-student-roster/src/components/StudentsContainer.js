@@ -12,6 +12,7 @@ class StudentsContainer extends Component {
 
     componentDidMount() {
         this.props.fetchStudents()      // <<= datastudents: (4) [{…}, {…}, {…}, {…}]
+        
     }
 
     render() {

@@ -1,4 +1,7 @@
 
+student.fetchStudentWords
+
+
 
 
 RUN APP
@@ -7,6 +10,13 @@ RUN APP
 
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
+FILE StudentsList.js
+
+<button onClick={(e) => student.fetchStudentWords}>{student.nickname}'s words</button>
+
+
+
+___________________________
 <button onClick={()=>deleteStudent(student.id)}>Delete Student</button>
 <button onClick={deleteStudent(student.id)}>Delete Student</button>
 
