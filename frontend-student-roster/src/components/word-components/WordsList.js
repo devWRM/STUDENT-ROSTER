@@ -3,6 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import WordsForm from './WordsForm.js';
 // import { deleteWord} from '../actions/wordsActions.js';
 
 
@@ -17,6 +18,7 @@ class WordsList extends React.Component {
             return (
                 
                 <div>
+                    <WordsForm />
                     <ul>                       
                             {this.props.words.length ? this.props.words.map(
                                 word => <li key={word.id}> <b>{word.spelling}</b> <br></br> {word.pos} <br></br>{word.definition} <br></br>{word.sentence} <br></br> <button onClick={() => this.props.deleteWord(word.id)}>Delete {word.spelling}</button> </li>

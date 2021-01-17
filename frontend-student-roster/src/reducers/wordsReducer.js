@@ -1,4 +1,5 @@
 export const wordsReducer = (state = [], action) => {
+    
     switch(action.type) {
         case 'FETCH_STUDENT_WORDS':
             return action.payload

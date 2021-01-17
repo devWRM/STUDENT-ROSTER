@@ -5,7 +5,7 @@ export const newWord = word => {
     return (dispatch) => {
         fetch('http://localhost:3000/students/:student_id/words', {
             method: 'POST',
-            body: JSON.stringify(student),
+            body: JSON.stringify(word),
             headers: { 'Content-Type': 'application/json' }
         })
         .then(resp => resp.json())
