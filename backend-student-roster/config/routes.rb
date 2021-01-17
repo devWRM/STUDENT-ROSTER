@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :words
+  # resources :words
   resources :students do
     resources :words end
 
