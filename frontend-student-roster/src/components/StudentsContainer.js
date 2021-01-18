@@ -10,10 +10,10 @@ import StudentsList from './StudentsList.js';
 
 class StudentsContainer extends Component {
 
-    componentDidMount() {
-        this.props.fetchStudents()      // <<= datastudents: (4) [{…}, {…}, {…}, {…}]
-        
-    }
+    // componentDidMount() {
+    //     this.props.fetchStudents()      // <<= datastudents: (4) [{…}, {…}, {…}, {…}]
+
+    // }
 
     render() {
         return (

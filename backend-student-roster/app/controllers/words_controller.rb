@@ -7,7 +7,8 @@ class WordsController < ApplicationController
     # @words = Word.all
     # render json: @words
 
-    @words = @student.words
+    # @words = @student.words
+    @words = Word.all
     render json: @words
 
   end
@@ -31,6 +32,7 @@ class WordsController < ApplicationController
 
   # PATCH/PUT /words/1
   def update
+    @word = Word.find(params[:id])
     if @word.update(word_params)
       render json: @word
     else
@@ -40,6 +42,7 @@ class WordsController < ApplicationController
 
   # DELETE /words/1
   def destroy
+    @word = Word.find(params[:id])
     @word.destroy
   end
 

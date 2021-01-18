@@ -9,15 +9,29 @@ import React from 'react';
 import Router from './Router.js';
 
 
-const App = () => {
-    return(
-        <div>
-            This is App.js
-            {/* <StudentsContainer /> */}
+class App extends React.Component {
 
-            <Router />
-        </div>
-    );
+
+    componentDidMount() {
+        fetch('http://localhost:3000/students/1/words')
+        .then(resp => resp.json())
+        .then(dataWhat => console.log(dataWhat))
+
+    }
+
+
+
+
+    render() {
+        return(
+            <div>
+                This is App.js
+                {/* <StudentsContainer /> */}
+
+                <Router />
+            </div>
+        );
+    }
 }
 
 

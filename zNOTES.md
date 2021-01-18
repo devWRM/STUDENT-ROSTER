@@ -2,11 +2,14 @@
 student.fetchStudentWords
 
 
-
-
 RUN APP
     cd into backend =>>     bundle install          rails s
     cd into frontend =>>    npm install             npm start
+
+DEBUG
+    binding.pry   <<=   backend (check terminal)
+    debugger;     <<=   frontend (check console)
+
 
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
