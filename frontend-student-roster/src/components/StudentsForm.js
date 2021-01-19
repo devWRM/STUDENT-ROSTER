@@ -31,6 +31,11 @@ class StudentsForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.newStudent(this.state)
+        this.setState({
+            name: "",
+            nickname: "",
+            email: ""
+        })
     }
 
 
