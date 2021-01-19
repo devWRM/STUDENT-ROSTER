@@ -12,5 +12,5 @@ export const studentsReducer = (state = [], action) => {
     }
 }
 
-
+// ????? has access to current state in order to create (NOT update) a new state
 

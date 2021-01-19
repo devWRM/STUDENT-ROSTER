@@ -22,6 +22,7 @@ class StudentsForm extends Component {
     // name => property name (name, nickname, or email)
     // value => each keyStroke + previous state  
 
+    // Without the const above, use =>> [e.target.name]: e.target.value
         this.setState({
             [name]: value
         })

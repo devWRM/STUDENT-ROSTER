@@ -2,7 +2,9 @@
 // got it! studentsActions fetches the action methods in the Controllers
 
 
-export const fetchStudents = () => {
+// NOTE Thunk anonymous function receives dispatch as an argument so that it's called AFTER fetch in complete
+
+export function fetchStudents() {
     return (dispatch) => {
         fetch('http://localhost:3000/students')
         .then(resp => resp.json())
@@ -20,12 +22,14 @@ export const newStudent = student => {
         fetch('http://localhost:3000/students', {
             method: 'POST',
             body: JSON.stringify(student),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json'}
         })
         .then(resp => resp.json())
         .then(dataStudent => dispatch({ type: 'NEW_STUDENT', payload: dataStudent}))
     }
 }
+
+// NOTE In headers, Accept key/value is optional, Content-Type is mandatory
 
 
 

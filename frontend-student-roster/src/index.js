@@ -15,7 +15,8 @@ import App from './components/App.js';
 import { rootReducer } from './reducers/rootReducer.js';
 
 
-
+// Can NOT pass in multiple Reducers nor multiple middleware
+// rootReducer & compose combines the arguments into a single variable
 const store = createStore(
     rootReducer,
     composeWithDevTools(applyMiddleware(thunk))

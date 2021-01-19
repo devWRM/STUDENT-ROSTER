@@ -11,21 +11,10 @@ import Router from './Router.js';
 
 class App extends React.Component {
 
-
-    componentDidMount() {
-        fetch('http://localhost:3000/students/1/words')
-        .then(resp => resp.json())
-        .then(dataWhat => console.log(dataWhat))
-
-    }
-
-
-
-
     render() {
         return(
             <div>
-                This is App.js
+                <p>This is App.js</p>
                 {/* <StudentsContainer /> */}
 
                 <Router />
