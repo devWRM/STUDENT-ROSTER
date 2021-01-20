@@ -19,6 +19,11 @@ FILE StudentsList.js
 
 
 
+
+Word.create(spelling: "citizen", pos: "noun", definition: "a member of a state or nation", sentence: "I am an American citizen.", student_id: 2)
+
+
+
 ___________________________
 <button onClick={()=>deleteStudent(student.id)}>Delete Student</button>
 <button onClick={deleteStudent(student.id)}>Delete Student</button>

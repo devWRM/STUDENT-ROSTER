@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 import { deleteStudent } from '../actions/studentsActions.js';
 /////////////////////////import WordsList from './word-components/WordsList.js';
-import Student from './Student.js';
+
 
 // refer to as props.students =>>   const StudentsList = () => {
 
@@ -27,11 +27,13 @@ class StudentsList extends React.Component {
 
                     <ul>
 
-                    {/* {this.props.students.length ? this.props.students.map(student => <li key={student.id}>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} <br></br> <button onClick={() => this.props.deleteStudent(student.id)}>Delete Student</button> </li>) : <h3>Roster is empty: No Students</h3>} */}
+                    {this.props.students.length ? this.props.students.map(student => <li key={student.id}>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} <br></br> <button onClick={() => this.props.deleteStudent(student.id)}>Delete Student</button> </li>) : <h3>Roster is empty: No Students</h3>}
 
-
-                    {this.props.students.length ? this.props.students.map(student => <li key={student.id}> <Student student={student} /> </li>) : <h3>Roster is empty: No Students</h3>}
-
+                            
+                        
+                        {/* {this.props.students.length ? this.props.students.map(
+                            student => <li key={student.id}>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} <br></br> <button onClick={() => this.props.deleteStudent(student.id)}>Delete Student</button> <button onClick={() => console.log('TOGGLE WORDS STATE')}>{student.nickname}'s words</button> <br></br>  <WordsList /> </li>
+                            ) : <h3>Roster is empty: No Students</h3> } */}
 
                         
                     </ul>

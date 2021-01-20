@@ -2,12 +2,13 @@
 
 import React, { Component } from 'react';
 // Connects React component to redux store
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
+///////////////////import WordsList from './WordsList.js';
 
-import WordsForm from './WordsForm.js';
-import WordsList from './WordsList.js';
-
+// // import { fetchStudents } from '../actions/studentsActions.js';
+// // import StudentsForm from './StudentsForm.js';
+// // import StudentsList from './StudentsList.js';
 
 class WordsContainer extends Component {
 
@@ -19,18 +20,13 @@ class WordsContainer extends Component {
         return (
             <div>
                 This is the WordsContainer
-                <WordsForm />
-                {/* <WordsList wordslist={this.props.student.words} /> */}
-
-                <WordsList wordslist={this.props.student && this.props.student.words} />
-
-
-                {/* this.props.student.words */}
+                <WordsList />
+                {/* <WordsForm /> */}
             </div>
         );
     }
 }
 
-export default WordsContainer;
+///////////////////////////export default WordsContainer;
 // export default connect(null, { fetchWords })(WordsContainer);
 // // makes fetchWords available to WordsContainer as a prop
