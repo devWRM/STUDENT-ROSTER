@@ -30,7 +30,7 @@ class StudentsList extends React.Component {
                     {/* {this.props.students.length ? this.props.students.map(student => <li key={student.id}>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} <br></br> <button onClick={() => this.props.deleteStudent(student.id)}>Delete Student</button> </li>) : <h3>Roster is empty: No Students</h3>} */}
 
 
-                    {this.props.students.length ? this.props.students.map(student => <li key={student.id}> <Student student={student} /> </li>) : <h3>Roster is empty: No Students</h3>}
+                    {this.props.students.length ? this.props.students.map(student => <li key={student.id}>  <br></br> <button onClick={() => this.props.deleteStudent(student.id)}>Delete {student.nickname}</button>  <Student student={student} />    </li>) : <h3>Roster is empty: No Students</h3>}
 
 
                         
