@@ -1,4 +1,16 @@
 
+
+
+
+
+DELETE below
+
+DELETE above
+
+________________________________
+
+
+
 student.fetchStudentWords
 
 
@@ -13,106 +25,70 @@ DEBUG
 
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
-FILE StudentsList.js
-
-<button onClick={(e) => student.fetchStudentWords}>{student.nickname}'s words</button>
 
 
 
+
+
+
+
+==================================================================
+
+CREATE NEW WORD WITH:
 
 Word.create(spelling: "citizen", pos: "noun", definition: "a member of a state or nation", sentence: "I am an American citizen.", student_id: 2)
 
 
 
-___________________________
-<button onClick={()=>deleteStudent(student.id)}>Delete Student</button>
-<button onClick={deleteStudent(student.id)}>Delete Student</button>
-
-ERROR
-Unhandled Rejection (SyntaxError): Unexpected end of JSON input
-(anonymous function)
-http://localhost:3001/static/js/main.chunk.js:51:26
-  48 |   headers: {
-  49 |     'Content-Type': 'application/json'
-  50 |   }
-> 51 | }).then(resp => resp.json()).then(student => {
-     |                      ^  52 |   dispatch({
-  53 |     type: "DELETE_STUDENT",
-  54 |     payload: student.id
-
-
-
-ERROR
-Unhandled Rejection (SyntaxError): Unexpected end of JSON input
-(anonymous function)
-src/actions/studentsActions.js:36
-  33 | return (dispatch) => {
-  34 | 
-  35 | 
-> 36 |     return fetch(`http://localhost:3000/students/${studentID}`,{
-     | ^  37 |         method: 'DELETE',
-  38 |         headers: {
-  39 |             'Content-Type': 'application/json'
 
 
 
 
+________________________________
+
+SOLUTIONS: Update the current state array of student objects
+            By repacing the Abe student object
+            with new Abe student object
+            that now has the new word in his words array
+
+
+SECOND RESP RETURNED creating new Word & Student
+NOTE Both go to the same Reducer =>>  FILE studentsReducer.js
+
+2nd response creating new Word
+NOTE could not get a console.log from 2nd .then
+    so debugger in the reducer where the return is dispatched to
+
+    state   =>> array of current student objects including 
+                ABE who has 14 WORDS
+    action  =>> object w/2 keys
+                  type:     "NEW_WORD"
+                  payload:  CURRENT single student object containing array of words including the NEW WORD
+                  ABE has 15 WORDS
+
+
+2nd response creating new Student
+NOTE could not get a console.log from 2nd .then
+    so debugger in the reducer where the return is dispatched to
+
+    state   =>> array of current student objects
+    action  =>> object w/2 keys
+                  type:     "NEW_STUDENT"
+                  payload:  NEW student object with EMPTY ARRAY OF WORDS
+
+____________________________________
+
+FIRST RESP RETURNED IN ACTIONS creating new Word & Student
+
+wordsActions.js:6 
+Response {type: "cors", url: "http://localhost:3000/students/1/words", redirected: false, status: 200, ok: true, …}
+
+studentsActions.js:22 
+Response {type: "cors", url: "http://localhost:3000/students", redirected: false, status: 201, ok: true, …}
+
+
+______________
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-_______________________________________________________
-
-               <label>Name</label>
-                <input type="text" value={this.state.name} onChange={this.handleChange} name="name" placeholder="name"></input><br></br><br></br>
-
-                <label>Nickname</label>
-                <input type="text" value={this.state.nickname} onChange={this.handleChange} name="nickname" placeholder="nickname"></input><br></br><br></br>
-
-                <label>Email</label>
-                <input type="text" value={this.state.email} onChange={this.handleChange} name="email" placeholder="email"></input><br></br><br></br>
-
-
-
-____________________
-
- // return(
-        //     // <form>
-        //     //     <label>Name:</label>
-        //     //      <input type="text" value={this.state.name} onChange={this.handleChange} name="name" /></br>
-        //     //     <label>Nickname:</label>
-        //     //     <input type="text" value={this.state.nickname} onChange={this.handleChange} name="nickname" /></br>
-        //     //     <label>Email:</label>
-        //     //     <input type="text" value={this.state.email} onChange={this.handleChange}  name="email" /></br>          
-        //     //     <input type="submit" value="Create Student/>
-        //     // </form>
-        // );
-
-________________________________________
-
-CHECKS TO SEE WHY FETCH WASN'T WORKING
-
-class StudentsContainer extends Component {
-
-    componentDidMount() {
-        // console.log(this)            // <<= StudentsContainer
-        // console.log(this.props)      // <<= {fetchStudents: f}
-        // this.props()                 // <<= TypeError: this.props is not a function
-        // this.props.fetchStudents     // <<= nothing
-        this.props.fetchStudents()      // <<= Got it! (4) [{…}, {…}, {…}, {…}]
-    }
-
-    render() {
-        return ()
-    }
-}

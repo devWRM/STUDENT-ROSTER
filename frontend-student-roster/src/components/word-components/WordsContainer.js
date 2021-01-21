@@ -19,7 +19,7 @@ class WordsContainer extends Component {
         return (
             <div>
                 This is the WordsContainer
-                <WordsForm />
+                <WordsForm student={this.props.student} />
                 {/* <WordsList wordslist={this.props.student.words} /> */}
 
                 <WordsList wordslist={this.props.student && this.props.student.words} />

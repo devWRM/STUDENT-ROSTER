@@ -14,7 +14,7 @@ class App extends React.Component {
     render() {
         return(
             <div>
-                <p>This is App.js</p>
+                <p>WELCOME to App.js</p>
                 {/* <StudentsContainer /> */}
 
                 <Router />

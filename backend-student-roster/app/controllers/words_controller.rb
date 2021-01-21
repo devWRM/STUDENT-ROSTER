@@ -21,10 +21,12 @@ class WordsController < ApplicationController
 
   # POST /words
   def create
+
     @word = @student.words.new(word_params)
 
     if @word.save
-      render json: @word, status: :created, location: @word
+      # render json: @word, status: :created, location: @word
+      render json: @student
     else
       render json: @word.errors, status: :unprocessable_entity
     end
@@ -44,6 +46,8 @@ class WordsController < ApplicationController
   def destroy
     @word = Word.find(params[:id])
     @word.destroy
+
+    render json: @student
   end
 
   # DELETE /words
