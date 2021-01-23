@@ -15,8 +15,18 @@ student.fetchStudentWords
 
 
 RUN APP
+
+    BACKEND
+    (cd into Project Folder)
+    rails new backend-name --api        <<= creates a Rails backend
     cd into backend =>>     bundle install          rails s
+
+    FRONTEND
+    (cd into Project Folder)
+    create-react-app frontend-name      <<= creates a React frontend
     cd into frontend =>>    npm install             npm start
+
+    np
 
 DEBUG
     binding.pry   <<=   backend (check terminal)
@@ -43,6 +53,20 @@ Word.create(spelling: "citizen", pos: "noun", definition: "a member of a state o
 
 
 
+
+
+
+
+
+
+________________________________
+
+.eslintcache
+
+Stackoverflow:  Added .eslintcache to .gitignore per =>>  https://stackoverflow.com/questions/65079558/how-to-delete-eslintcache-file-in-react
+/frontend-library/.eslintcache
+
+Documentation:  https://eslint.org/docs/user-guide/command-line-interface#caching
 
 ________________________________
 
@@ -89,6 +113,20 @@ Response {type: "cors", url: "http://localhost:3000/students", redirected: fals
 
 ______________
 
+FILE App.js
+Original code in the return
 
+NOTE image tag
+    {/* <img src={logo} className="App-logo" alt="logo" /> */}
+
+NOTE anchor tag (link)
+    {/* <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
+    </a> */}
 
 
