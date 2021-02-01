@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 // import { Route } from 'react-router-dom';
 
 import { fetchStudents } from '../actions/studentsActions.js';
-import StudentsForm from './StudentsForm.js';
-import StudentsList from './StudentsList.js';
+// import StudentsForm from './StudentsForm.js';
+// import StudentsList from './StudentsList.js';
 // import Student from './Student.js';
 
 
@@ -25,13 +25,13 @@ class StudentsContainer extends Component {
                 <p>This is the StudentsContainer</p>
 
                 {/* <Route path='/students/new' component={StudentsForm} /> */}
-                <StudentsForm />
+                {/* <StudentsForm /> */}
 
                 {/* <Route path='/students/:id' render={(routerProps) => <Student {...routerProps} students={this.props.students} />}/> */}
                 {/* route to list single student */}
 
                 {/* <Route exact path='/students' render={(routerProps) => <StudentsList {...routerProps} students={this.props.students} />}/> */}
-                <StudentsList students={this.props.students} /> 
+                {/* <StudentsList students={this.props.students} />  */}
             </div>
         );
     }
