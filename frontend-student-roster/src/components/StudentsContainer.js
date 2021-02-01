@@ -22,7 +22,7 @@ class StudentsContainer extends Component {
     render() {
         return (
             <div>
-                <p>This is the StudentsContainer</p>
+                
 
                 {/* <Route path='/students/new' component={StudentsForm} /> */}
                 {/* <StudentsForm /> */}
