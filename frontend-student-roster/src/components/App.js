@@ -14,7 +14,14 @@ class App extends React.Component {
     render() {
         return(
             <div>
-                <p>Student Roster</p>
+
+                <header>
+                    <p>Student Roster</p>
+
+                </header>
+
+
+                
                 {/* <StudentsContainer /> */}
 
                 <Router />
