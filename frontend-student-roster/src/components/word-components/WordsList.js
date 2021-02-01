@@ -7,7 +7,6 @@ import Word from './Word.js';
 
 
 const WordsList = (props) => {
-    // debugger;
 
     let handleDelete = (word) => {
         props.deleteWord(word.id, word.student_id)
@@ -16,15 +15,19 @@ const WordsList = (props) => {
     return (
         <div>
 
-            Wordlist:<br></br>
-            {props.wordslist && props.wordslist.map(word => 
+        <ul>
+                {props.wordslist && props.wordslist.map(word => 
 
-                <li key={word.id}>
-                    {/* {word.spelling} */}
-                    <Word word={word} />
-                    <button onClick={() => handleDelete(word)}>delete</button>
-                </li>
+                    <li key={word.id}>
+                        {/* {word.spelling} */}
+                        <Word word={word} />
+                        <button onClick={() => handleDelete(word)}>delete</button>
+                    </li>
+            
+
             )}
+        </ul>
+
         </div>
     )
 }
