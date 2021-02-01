@@ -4,19 +4,21 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Home from './Home.js';
 import Welcome from './Welcome.js';
 import About from './About.js';
-// import StudentsContainer from './StudentsContainer.js';
-import StudentsList from './StudentsList.js';
+import StudentsContainer from './StudentsContainer.js';
+// import StudentsList from './StudentsList.js';
 
 
 const Router = () => {
     return (
         <Switch>
+            <Route exact path='/' component={Home} />
             <Route exact path='/welcome' component={Welcome} />
             <Route exact path='/about' component={About} />
-            {/* <Route path='/students' component={StudentsContainer} /> */}
-            <Route path='/students' component={StudentsList} />
+            <Route path='/students' component={StudentsContainer} />
+            {/* <Route path='/students' component={StudentsList} /> */}
         </Switch>
     );
 }
