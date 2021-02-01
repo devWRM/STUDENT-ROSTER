@@ -4,6 +4,11 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+
+# Added this to attempt to stop the volume of files being unnecessarily stored on github; alternative to deleting the .eslintcache file
+/frontend-student-roster/.eslintcache
+
+
 # Ignore bundler config.
 /backend-student-roster/.bundle
 
