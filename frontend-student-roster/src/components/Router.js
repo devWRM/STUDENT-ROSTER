@@ -6,7 +6,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import Welcome from './Welcome.js';
 import About from './About.js';
-import StudentsContainer from './StudentsContainer.js';
+// import StudentsContainer from './StudentsContainer.js';
+import StudentsList from './StudentsList.js';
 
 
 const Router = () => {
@@ -14,7 +15,8 @@ const Router = () => {
         <Switch>
             <Route exact path='/welcome' component={Welcome} />
             <Route exact path='/about' component={About} />
-            <Route path='/students' component={StudentsContainer} />
+            {/* <Route path='/students' component={StudentsContainer} /> */}
+            <Route path='/students' component={StudentsList} />
         </Switch>
     );
 }
