@@ -2,12 +2,17 @@
 
 
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-// Replaced with Routes from Router
-// import StudentsContainer from './StudentsContainer.js';
+
+// Need this container (though not directly referenced) to fetch students displayed in StudentsList
+import StudentsContainer from './StudentsContainer.js';
 
 import Header from './Header.js';
-import Router from './Router.js';
+import Home from './Home.js';
+import StudentsList from './StudentsList.js';
+
+// import Router from './Router.js';
 
 
 class App extends React.Component {
@@ -16,10 +21,12 @@ class App extends React.Component {
         return(
             <div>
                 <Header />
-                
-                {/* <StudentsContainer /> */}
 
-                <Router />
+                <Home />
+                <StudentsList />
+                <StudentsContainer />
+
+                {/* <Router /> */}
             </div>
         );
     }
