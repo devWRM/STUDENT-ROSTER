@@ -16,16 +16,16 @@ const WordsList = (props) => {
         <div>
 
         <ul>
-                {props.wordslist && props.wordslist.map(word => 
+                {
+                    props.wordslist.length ? props.wordslist.map(word => 
 
-                    <li key={word.id}>
-                        {/* {word.spelling} */}
-                        <Word word={word} />
-                        <button onClick={() => handleDelete(word)}>delete {word.spelling}</button>
-                    </li>
-            
-
-            )}
+                        <li key={word.id}>
+                            {/* {word.spelling} */}
+                            <Word word={word} />
+                            <button onClick={() => handleDelete(word)}>delete {word.spelling}</button>
+                        </li>
+                    ) : <h4>There are no words in this student's wordlist.</h4>
+                }
         </ul>
 
         </div>
