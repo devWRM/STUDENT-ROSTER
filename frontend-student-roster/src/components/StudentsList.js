@@ -28,10 +28,6 @@ class StudentsList extends React.Component {
 
                     <StudentsForm />
 
-                    
-
-                    {/* {this.props.students.length ? this.props.students.map(student => <li key={student.id}>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} <br></br> <button onClick={() => this.props.deleteStudent(student.id)}>Delete Student</button> </li>) : <h3>Roster is empty: No Students</h3>} */}
-
 
                     {this.props.students.length ? this.props.students.map(student => <div key={student.id}>  <button onClick={() => this.props.deleteStudent(student.id)}>Delete {student.nickname}</button>  <Student student={student} />  <br></br>  </div>) : <h3>Roster is empty: No Students</h3>}
 
@@ -39,12 +35,7 @@ class StudentsList extends React.Component {
                         
                     
 
-                    {/* console.log(`${student.id}`) */}
-                    {/* deleteStudent(student.id) */}
-
-                    {/* <ul>
-                    {students.map(student => <li key={student.id} on>{student.nickname} <br></br> {student.name} <br></br>email: {student.email} </li>)}
-                    </ul> */}
+                    
                 </div>
             );
     }
