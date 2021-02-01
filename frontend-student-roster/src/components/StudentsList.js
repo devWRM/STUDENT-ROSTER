@@ -3,6 +3,8 @@
 import React from 'react';
 // Connects React component to redux store
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 // https://stackoverflow.com/questions/61906909/cant-understand-why-onclick-not-working-in-react
 // You can't dispatch directly from a HTML element onClick handler. If you bind the redux action creators it should work as expected
@@ -12,7 +14,7 @@ import { connect } from 'react-redux';
 import StudentsForm from './StudentsForm.js';
 import { deleteStudent } from '../actions/studentsActions.js';
 /////////////////////////import WordsList from './word-components/WordsList.js';
-import Student from './Student.js';
+// import Student from './Student.js';
 
 // refer to as props.students =>>   const StudentsList = () => {
 
@@ -28,8 +30,10 @@ class StudentsList extends React.Component {
 
                     <StudentsForm />
 
+                    {this.props.students.length ? this.props.students.map(student => <div key={student.id}>  <button onClick={() => this.props.deleteStudent(student.id)}>Delete {student.nickname}</button>  <Link to={`/students/${student.id}`}>{student.name}</Link>  <br></br>  </div>) : <h3>Roster is empty: No Students</h3>}
 
-                    {this.props.students.length ? this.props.students.map(student => <div key={student.id}>  <button onClick={() => this.props.deleteStudent(student.id)}>Delete {student.nickname}</button>  <Student student={student} />  <br></br>  </div>) : <h3>Roster is empty: No Students</h3>}
+
+                    {/* {this.props.students.length ? this.props.students.map(student => <div key={student.id}>  <button onClick={() => this.props.deleteStudent(student.id)}>Delete {student.nickname}</button>  <Student student={student} />  <br></br>  </div>) : <h3>Roster is empty: No Students</h3>} */}
 
 
                         
