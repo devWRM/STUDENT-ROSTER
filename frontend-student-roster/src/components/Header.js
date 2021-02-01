@@ -16,7 +16,25 @@ class Header extends Component {
 
     render() {
         return (
-            <div>
+            <div
+            
+            style = {{
+                minHeight: '20vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'space-around',
+                fontSize: '25px',
+                backgroundColor: '#99e6ff',
+                color: 'black'
+
+
+                // justifyContent: 'left',
+                // fontSize: '20px',
+                // padding: '1rem'
+            }}
+            
+            >
                  <p>STUDENT ROSTER</p>
                     <button onClick={this.handleClickHome}>Home</button>
                     <button onClick={this.handleClickStudentList}>Student List</button>
