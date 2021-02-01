@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+
 
 
 class Header extends Component {
@@ -26,8 +26,4 @@ class Header extends Component {
 }
 
 
-const mapStateToProps = state => {
-    return { students: state.students }
-}
-
-export default connect(mapStateToProps)(withRouter(Header));
+export default withRouter(Header);

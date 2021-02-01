@@ -3,6 +3,8 @@
 // Should be similar to StudentsList.js
 
 import React from 'react'
+import { connect } from 'react-redux';
+
 
 import WordsContainer from './word-components/WordsContainer.js'
 
@@ -29,7 +31,12 @@ const Student = (props) => {
 
 }
 
-export default Student
+const mapStateToProps = state => {
+    return { students: state.students }
+}
+
+
+export default connect(mapStateToProps)(Student);
 
 
 
