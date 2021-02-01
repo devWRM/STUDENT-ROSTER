@@ -14,7 +14,7 @@ const Router = () => {
         <Switch>
             <Route exact path='/welcome' component={Welcome} />
             <Route exact path='/about' component={About} />
-            <Route exact path='/students' component={StudentsContainer} />
+            <Route path='/students' component={StudentsContainer} />
         </Switch>
     );
 }

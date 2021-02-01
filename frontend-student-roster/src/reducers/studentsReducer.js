@@ -6,7 +6,7 @@ export const studentsReducer = (state = [], action) => {
         case 'NEW_STUDENT':
             return [...state, action.payload]
         case 'DELETE_STUDENT':
-            let newStudents = state.filter(student => student.id !== action.payload)
+            let newStudents = state.filter(student => student.id !== action.payload.id)
             return [...newStudents] 
         case 'NEW_WORD':
             let studentsPlusWord = state.map(student => {

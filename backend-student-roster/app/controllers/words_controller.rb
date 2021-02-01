@@ -44,9 +44,11 @@ class WordsController < ApplicationController
 
   # DELETE /words/1
   def destroy
+# binding.pry
     @word = Word.find(params[:id])
     @word.destroy
 
+# binding.pry
     render json: @student
   end
 
