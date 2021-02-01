@@ -21,11 +21,15 @@ class App extends React.Component {
         return(
             <div>
                 <Header />
-
-                <Home />
-                <StudentsList />
                 <StudentsContainer />
 
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    {/* <Home /> */}
+
+                    <Route path="/students" component={StudentsList} />
+                    {/* <StudentsList /> */}
+                </Switch>
                 {/* <Router /> */}
             </div>
         );
