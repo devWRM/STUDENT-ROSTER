@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux'      //  <<= works with mapDispatchToProps(dispatch)
 
 
+import StudentsForm from './StudentsForm.js';
 import { deleteStudent } from '../actions/studentsActions.js';
 /////////////////////////import WordsList from './word-components/WordsList.js';
 import Student from './Student.js';
@@ -24,6 +25,8 @@ class StudentsList extends React.Component {
             return (
                 
                 <div>
+
+                    <StudentsForm />
 
                     <ul>
 
