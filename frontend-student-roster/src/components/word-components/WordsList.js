@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 import { deleteWord } from './wordsActions';
+import Word from './Word.js';
 
 
 const WordsList = (props) => {
@@ -19,7 +20,8 @@ const WordsList = (props) => {
             {props.wordslist && props.wordslist.map(word => 
 
                 <li key={word.id}>
-                    {word.spelling} {word.student_id}
+                    {/* {word.spelling} */}
+                    <Word word={word} />
                     <button onClick={() => handleDelete(word)}>delete</button>
                 </li>
             )}
