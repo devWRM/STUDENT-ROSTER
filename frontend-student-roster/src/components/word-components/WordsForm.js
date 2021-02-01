@@ -61,11 +61,15 @@ class WordsForm extends Component {
                    <label>POS</label>
                    <input type="text" value={this.state.pos} onChange={this.handleChange} name="pos"></input>
 
+                    <br></br>
+
                    <label>Definition</label>
                    <input type="text" value={this.state.definition} onChange={this.handleChange} name="definition"></input>
 
                    <label>Sentence</label>
                    <input type="text" value={this.state.sentence} onChange={this.handleChange} name="sentence"></input>
+
+                    <br></br>
 
                    <input type="submit" value="Create Word"></input><br></br>
 
