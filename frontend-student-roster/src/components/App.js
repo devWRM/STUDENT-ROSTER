@@ -11,6 +11,7 @@ import StudentsContainer from './StudentsContainer.js';
 import Header from './Header.js';
 import Home from './Home.js';
 import StudentsList from './StudentsList.js';
+import Student from './Student.js';
 
 // import Router from './Router.js';
 
@@ -29,6 +30,8 @@ class App extends React.Component {
 
                     <Route path="/students" component={StudentsList} />
                     {/* <StudentsList /> */}
+
+                    <Route path="/students/:id" component={Student} />
                 </Switch>
                 {/* <Router /> */}
             </div>
