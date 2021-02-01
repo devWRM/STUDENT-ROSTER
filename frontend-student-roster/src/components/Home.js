@@ -2,8 +2,17 @@ import React from 'react';
 
 function Home() {
     return (
-        <div>
-            HOME of Student Roster
+        <div
+            style = {{
+            display: 'flex',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            fontSize: '20px',
+            padding: '1rem'
+        }}
+        
+        >
+            <h1>WELCOME TO STUDENT ROSTER!</h1>
         </div>
     )
 }
