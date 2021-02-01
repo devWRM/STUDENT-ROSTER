@@ -53,6 +53,7 @@ class WordsForm extends Component {
     render() {
         return (
             <div>
+                <p>Fill in the boxes and submit to create a new word {this.props.student.name}</p>
                <form onSubmit={this.handleSubmit}>
                    <label>Word</label>
                    <input type="text" value={this.state.spelling} onChange={this.handleChange} name="spelling"></input>
