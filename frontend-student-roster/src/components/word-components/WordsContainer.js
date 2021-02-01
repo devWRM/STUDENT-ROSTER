@@ -11,10 +11,6 @@ import WordsList from './WordsList.js';
 
 class WordsContainer extends Component {
 
-//     // componentDidMount() {
-//     //     this.props.fetchStudents()      // <<= datastudents: (4) [{…}, {…}, {…}, {…}]
-//     // }
-
     render() {
         return (
             <div>
