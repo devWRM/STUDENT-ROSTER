@@ -21,7 +21,7 @@ const WordsList = (props) => {
                     <li key={word.id}>
                         {/* {word.spelling} */}
                         <Word word={word} />
-                        <button onClick={() => handleDelete(word)}>delete</button>
+                        <button onClick={() => handleDelete(word)}>delete {word.spelling}</button>
                     </li>
             
 
