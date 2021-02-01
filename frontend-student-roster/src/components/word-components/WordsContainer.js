@@ -11,10 +11,14 @@ import WordsList from './WordsList.js';
 
 class WordsContainer extends Component {
 
+//     // componentDidMount() {
+//     //     this.props.fetchStudents()      // <<= datastudents: (4) [{…}, {…}, {…}, {…}]
+//     // }
+
     render() {
         return (
             <div>
-                This is the WordsContainer
+                
                 <WordsForm student={this.props.student} />
                 {/* <WordsList wordslist={this.props.student.words} /> */}
 
