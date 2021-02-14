@@ -5,11 +5,15 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 
+import './App.css';
+
 // Need this container (though not directly referenced) to fetch students displayed in StudentsList
 import StudentsContainer from './StudentsContainer.js';
 
+
 import Header from './Header.js';
 import Home from './Home.js';
+import About from './About.js';
 import StudentsList from './StudentsList.js';
 import Student from './Student.js';
 
@@ -27,6 +31,8 @@ class App extends React.Component {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     {/* <Home /> */}
+
+                    <Route path="/about" component={About} />
 
                     <Route exact path="/students" component={StudentsList} />
                     {/* <StudentsList /> */}
