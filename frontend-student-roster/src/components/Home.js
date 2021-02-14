@@ -1,19 +1,41 @@
 import React from 'react';
 
+import English from '../images/english.png';
+
 function Home() {
     return (
-        <div
-            style = {{
-            display: 'flex',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            fontSize: '20px',
-            padding: '1rem',
-            marginTop: '50px'
-        }}
+        <div>
+
+            <div
+
+                style = {{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    fontSize: '20px',
+                    padding: '1rem',
+                    marginTop: '50px'
+                }}
         
-        >
-            <h1>WELCOME TO STUDENT ROSTER!</h1>
+            >
+                <h3>WELCOME TO STUDENT ROSTER!</h3>
+            </div>
+
+           
+           <div
+           
+                style = {{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                }}
+
+           >
+          
+                <img src={English} className="english" alt="English image" />
+
+            </div>
+
         </div>
     )
 }
