@@ -10,6 +10,12 @@ import { newWord } from './wordsActions.js';
 
 
 
+import styled from 'styled-components';
+const Label = styled.label`
+    margin: 1rem;
+`
+
+
 
 class WordsForm extends Component {
 
@@ -53,27 +59,32 @@ class WordsForm extends Component {
     render() {
         return (
             <div>
-                <p>Fill in the boxes below then click the Create Word button to create a new word</p>
+                <p>-------------------</p>
+
+                Create a new word:
                <form onSubmit={this.handleSubmit}>
-                   <label>Word</label>
+                   <Label>Word: </Label>
                    <input type="text" value={this.state.spelling} onChange={this.handleChange} name="spelling"></input>
 
-                   <label>POS</label>
+                   <Label>POS: </Label>
                    <input type="text" value={this.state.pos} onChange={this.handleChange} name="pos"></input>
 
                     <br></br>
 
-                   <label>Definition</label>
+                   <Label>Definition: </Label>
                    <input type="text" value={this.state.definition} onChange={this.handleChange} name="definition"></input>
 
-                   <label>Sentence</label>
+                   <Label>Sentence: </Label>
                    <input type="text" value={this.state.sentence} onChange={this.handleChange} name="sentence"></input>
 
                     <br></br>
 
-                   <input type="submit" value="Create Word"></input><br></br>
+                   <input type="submit" value="submit"></input><br></br>
 
                </form>
+
+                <p>-------------------</p>
+
             </div>
         )
     }
