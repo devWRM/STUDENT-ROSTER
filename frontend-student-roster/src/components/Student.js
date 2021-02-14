@@ -16,12 +16,21 @@ const Student = (props) => {
     // let student = props.students[props.match.params.id - 1]
 
     return (
-        <div>
+        <div
+        
+            style = {{
+                justifyContent: 'left',
+                fontSize: '17px',
+                padding: '1rem',
+                marginLeft: '20px'
+            }}
+        
+        >
             
             {/* STUDENT: {props.student.nickname} <br></br> {props.student.name} <br></br>email: {props.student.email}  */}
 
-            Nickname: {currentStudent.nickname}<br></br>
-            Name: {currentStudent.name}<br></br>
+            Student: {currentStudent.nickname}<br></br>
+            Full Name: {currentStudent.name}<br></br>
             Email: {currentStudent.email}
 
             <WordsContainer student={currentStudent} />
