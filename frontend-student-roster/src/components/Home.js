@@ -8,7 +8,8 @@ function Home() {
             justifyContent: 'space-around',
             alignItems: 'center',
             fontSize: '20px',
-            padding: '1rem'
+            padding: '1rem',
+            marginTop: '50px'
         }}
         
         >
