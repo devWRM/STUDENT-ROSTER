@@ -4,7 +4,7 @@ function Word(props) {
     return (
         <div>
             {props.word.spelling}<br></br>
-            {props.word.sentence}
+            - {props.word.definition}
         </div>
     )
 }
