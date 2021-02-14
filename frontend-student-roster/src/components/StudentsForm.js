@@ -40,16 +40,33 @@ class StudentsForm extends Component {
 
     render() {
         return (
-            <div>
-                <p>Fill in the boxes below then click the Create Student button to add a new student to the list.</p>
+            <div
+            
+                style = {{
+                    // width: '50%',
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    // fontSize: 20px,
+                    
+                    // border: '2px solid #ccc',
+                    padding: '1rem'
+                }}
+            
+            >
+                <p>
+                    Fill in the boxes then click the Create Student button to add a new student to the list.
+                    <br></br>
+                    Click on a student's name below to see their list of words.
+                </p>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Name</label>
+                    <label>Full Name: </label>
                     <input type="text" value={this.state.name} onChange={this.handleChange} name="name"></input><br></br><br></br>
 
-                    <label>Nickname</label>
+                    <label>Nickname: </label>
                     <input type="text" value={this.state.nickname} onChange={this.handleChange} name="nickname"></input><br></br><br></br>
 
-                    <label>Email</label>
+                    <label>Email: </label>
                     <input type="text" value={this.state.email} onChange={this.handleChange} name="email"></input><br></br><br></br>
 
                     <input type="submit" value="Create Student"></input><br></br>
