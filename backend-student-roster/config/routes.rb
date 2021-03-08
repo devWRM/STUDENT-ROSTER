@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get 'students/:id/words' => "words#index"
+  # get 'students/:id/words' => "words#index"
 
-  delete 'words' => "words#delete"
+  # delete 'words' => "words#delete"
 
 end
