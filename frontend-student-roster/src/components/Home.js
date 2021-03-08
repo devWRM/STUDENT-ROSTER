@@ -12,7 +12,7 @@ function Home() {
                     display: 'flex',
                     justifyContent: 'space-around',
                     alignItems: 'center',
-                    fontSize: '20px',
+                    fontSize: '35px',
                     padding: '1rem',
                     marginTop: '50px'
                 }}
