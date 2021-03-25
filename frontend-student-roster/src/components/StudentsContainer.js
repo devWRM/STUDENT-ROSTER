@@ -15,6 +15,7 @@ import { fetchStudents } from '../actions/studentsActions.js';
 class StudentsContainer extends Component {
 
     componentDidMount() {
+
         this.props.fetchStudents()      // <<= datastudents: (4) [{…}, {…}, {…}, {…}]
 
     }
